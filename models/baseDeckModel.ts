@@ -1,6 +1,4 @@
-
 import { Card } from './baseCardModel';
-import { Section } from '../types/deckTypes';
 
 export class Deck {
   deckId: string;

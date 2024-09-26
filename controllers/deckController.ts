@@ -1,6 +1,6 @@
 // src/controllers/deckController.ts
 import { v4 as uuidv4 } from 'uuid';
-import { decks, Deck } from '../models/genericDeckModel';
+import { decks, Deck } from '../models/baseDeckModel';
 import { getCardByName } from '../services/scryfallCardService';
 import { Section } from '../types/deckSectionType';
 
