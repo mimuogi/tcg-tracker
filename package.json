@@ -1,17 +1,10 @@
 {
-  "name": "tcg-tracker",
-  "version": "1.0.0",
-  "description": "App to track tcg decklists and game status",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.2",
     "axios": "^1.7.7",
     "express": "^4.21.0",
-    "sqlite3": "^5.1.7"
+    "typescript": "^5.6.2",
+    "uuid": "^10.0.0"
   }
 }
