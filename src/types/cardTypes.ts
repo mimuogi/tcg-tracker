@@ -1,10 +1,9 @@
 export interface ICard {
     name: string;
-    play_cost: string;
     type_line: string;
     oracle_text: string;
-    collection: string;
     image_uris?: { normal: string };
-    price: number;
-    currency: string;
-}
+    price?: number;      // Optional field in the base card interface
+    currency?: string;
+  }
+  

@@ -1,4 +1,4 @@
-type MTGSpellType = 
+export type MTGSpellType = 
   | "Creature"
   | "Instant"
   | "Sorcery"
