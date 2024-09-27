@@ -1,11 +1,20 @@
 import express, { Request, Response } from 'express';
-import { createDeck, addCardToDeck, moveCardBetweenSections, removeCardFromDeck } from '../controllers/deckController';
+import { createDeck, addCardToDeck, moveCardBetweenSections, removeCardFromDeck, decksDB } from '../controllers/deckController';
 
 const deckRouter = express.Router();
 
-deckRouter.post('/decks', (req: Request, res: Response) => {
+deckRouter.get('/decks', (req: Request, res: Response) => {
   try {
-    const newDeck = createDeck();
+    res.status(201).json(decksDB);
+  } catch {
+    res.status(500).json({ error: 'Failed to retreive decks' });
+  }
+})
+
+deckRouter.post('/decks/new/:name', (req: Request, res: Response) => {
+  try {
+    const {name} = req.params
+    const newDeck = createDeck(name);
     res.status(201).json(newDeck);
   } catch (error) {
     res.status(500).json({ error: 'Failed to create deck' });
@@ -13,7 +22,7 @@ deckRouter.post('/decks', (req: Request, res: Response) => {
 });
 
 
-deckRouter.post('/decks/:deckId/cards', async (req: Request, res: Response) => {
+deckRouter.post('/decks/:deckId/cards/add', async (req: Request, res: Response) => {
     const { deckId } = req.params;
     const { cardName, section, quantity } = req.body;
   
